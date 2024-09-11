@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grpc";
+option java_outer_classname = "UserProto";
+
+package user;
+
+service UserService {
+  rpc SaveUser (UserSaveRequest) returns (UserSaveResponse);
+}
+
+message UserSaveRequest {
+  string name = 1;
+}
+
+message UserSaveResponse {
+  bool success = 1;
+}
